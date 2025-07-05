@@ -8,6 +8,11 @@ function CiudadInput() {                                        // creamos un co
     const manejarCambio = (evento) => { // Creamos una funcion que se va a llamar cuando el usuario escriba algo en el input.//}
         setCiudad(evento.target.value) // Actualizamos el valor de "ciudad" con el valor del input.
     }
+        const manejarConsulta = () => {
+            alert(`Consultando el riesgo de incendio en: ${ciudad}`) // Mostramos un mensjae con la ciudad actual
+            // Mas adelanta aca vamos a llamar a la API o logica real.
+    }
+    
 
     return (
         <div>
@@ -19,8 +24,10 @@ function CiudadInput() {                                        // creamos un co
                 onChange={manejarCambio} // Cuando el usuario escribe algo, se llama a la funcion manejarCambio. 
             />
 
-            {/* Boton (todabia no hace nada */}
-            <button>Consultar</button>
+            {/* Boton que dispara la consulta */}
+            <button onClick={manejarConsulta}> {/* Cuando se hcar click, se ejecuta "manejarConsulta"*/}
+                Consultar
+            </button>
 
             {/*Mostrar lo que escribio el usuario en tiempo real*/}
             <p>Ciudad actual: {ciudad}</p> {/* Aca mostramos la variable ciudad en pantalla*/}
